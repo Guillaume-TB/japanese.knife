@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>包丁 · Guide d'achat d'un couteau japonais</title>
+<meta name="description" content="Guide pratique pour choisir et acheter un couteau japonais à Tokyo : types, lames, aciers, manches, tailles, prix, détaxe et transport.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f1e7;
+    --paper-2:#efe7d8;
+    --ink:#1c1a17;
+    --ink-soft:#55504a;
+    --line:#d9cfbd;
+    --red:#b8352a;
+    --steel:#6b7a86;
+    --radius:14px;
+    --max:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);
+    background:var(--paper);line-height:1.6;font-size:16px;
+  }
+  h1,h2,h3{font-family:"Noto Serif JP",serif;line-height:1.25;margin:0 0 .5em}
+  a{color:var(--red)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:10;background:rgba(246,241,231,.92);
+      backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:58px;overflow-x:auto}
+  nav .logo{font-family:"Noto Serif JP",serif;font-weight:700;font-size:1.2rem;white-space:nowrap}
+  nav .logo span{color:var(--red)}
+  nav a.lnk{color:var(--ink-soft);text-decoration:none;font-size:.92rem;white-space:nowrap}
+  nav a.lnk:hover{color:var(--red)}
+
+  /* HERO */
+  header.hero{padding:90px 0 70px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .hero .kanji{position:absolute;right:-20px;top:10px;font-family:"Noto Serif JP",serif;
+      font-size:clamp(140px,26vw,300px);color:var(--paper-2);font-weight:700;line-height:1;
+      user-select:none;pointer-events:none}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.6rem);max-width:720px;position:relative}
+  .hero p{max-width:620px;color:var(--ink-soft);font-size:1.1rem;position:relative}
+  .seal{display:inline-block;background:var(--red);color:#fff;font-family:"Noto Serif JP",serif;
+      padding:4px 10px;border-radius:4px;font-size:.85rem;letter-spacing:.08em;margin-bottom:18px;position:relative}
+  .tldr{margin-top:28px;background:var(--ink);color:var(--paper);border-radius:var(--radius);
+      padding:20px 24px;max-width:640px;position:relative}
+  .tldr b{color:#f3b2a9}
+
+  section{padding:70px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+  section h2 small{display:block;font-size:.9rem;color:var(--red);font-family:Inter,sans-serif;
+      letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:6px}
+  .lead{color:var(--ink-soft);max-width:700px;margin-bottom:30px}
+
+  /* FILTERS + CARDS */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+  .filters button{border:1px solid var(--line);background:#fff;color:var(--ink);padding:8px 14px;
+      border-radius:999px;cursor:pointer;font:inherit;font-size:.9rem;transition:.15s}
+  .filters button:hover{border-color:var(--ink)}
+  .filters button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;
+      display:flex;flex-direction:column;gap:8px;transition:.2s}
+  .card.hide{display:none}
+  .card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+  .card .jp{font-family:"Noto Serif JP",serif;color:var(--red);font-size:1.4rem}
+  .card h3{font-size:1.25rem;margin:0}
+  .card p{margin:0;color:var(--ink-soft);font-size:.95rem}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
+  .tag{font-size:.75rem;background:var(--paper-2);padding:3px 8px;border-radius:6px;color:var(--ink-soft)}
+  .tag.star{background:var(--red);color:#fff}
+  svg.blade{width:100%;height:46px}
+
+  .callout{background:var(--paper-2);border-left:4px solid var(--red);padding:16px 20px;
+      border-radius:0 var(--radius) var(--radius) 0;margin-top:26px}
+
+  /* TWO COLS */
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .box{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .box h3{font-size:1.15rem}
+  .box ul{margin:0;padding-left:18px}
+  .box li{margin-bottom:6px}
+  .pill{display:inline-block;font-size:.75rem;padding:2px 8px;border-radius:999px;font-weight:600;margin-left:6px}
+  .pill.g{background:#e3efe2;color:#2e6b2a}
+  .pill.o{background:#f8e7d4;color:#9a5a12}
+
+  /* TABLE */
+  .tbl{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--radius);overflow:hidden;
+      border:1px solid var(--line)}
+  .tbl th,.tbl td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  .tbl th{background:var(--ink);color:var(--paper);font-weight:500;font-size:.9rem}
+  .tbl tr:last-child td{border-bottom:none}
+  .tbl tr.best td{background:#fbf3ee}
+  .tblwrap{overflow-x:auto}
+
+  /* QUIZ */
+  .quiz{background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:28px}
+  .quiz h3{color:var(--paper)}
+  .q{margin-bottom:18px}
+  .q label{display:block;font-weight:600;margin-bottom:8px}
+  .q .opts{display:flex;flex-wrap:wrap;gap:8px}
+  .q .opts button{background:transparent;border:1px solid #57524b;color:var(--paper);
+      padding:8px 14px;border-radius:999px;cursor:pointer;font:inherit;font-size:.9rem}
+  .q .opts button.on{background:var(--red);border-color:var(--red)}
+  #result{margin-top:10px;background:#2a2723;border-radius:10px;padding:18px;min-height:60px}
+  #result b{color:#f3b2a9}
+
+  /* SLIDER */
+  .conv{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:20px;background:#fff;
+      border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+  .conv input[type=range]{flex:1;min-width:200px;accent-color:var(--red)}
+  .conv output{font-family:"Noto Serif JP",serif;font-size:1.3rem;min-width:220px}
+
+  /* STEPS */
+  .steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:12px}
+  .steps li{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+      padding:16px 18px 16px 62px;position:relative}
+  .steps li::before{content:counter(s);position:absolute;left:18px;top:14px;width:30px;height:30px;
+      border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:600}
+  .warn{background:#fff4f2;border:1px solid #f0c4bd}
+
+  /* CHECKLIST */
+  .check label{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed var(--line);cursor:pointer}
+  .check input{accent-color:var(--red);width:18px;height:18px;margin-top:3px}
+  .check input:checked + span{text-decoration:line-through;color:var(--ink-soft)}
+
+  footer{padding:40px 0 60px;color:var(--ink-soft);font-size:.88rem}
+  footer ul{padding-left:18px}
+
+  @media (max-width:600px){
+    header.hero{padding:60px 0 50px}
+    section{padding:50px 0}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo"><span>包丁</span> Hōchō</div>
+    <a class="lnk" href="#types">Types</a>
+    <a class="lnk" href="#quiz">Lequel choisir ?</a>
+    <a class="lnk" href="#lame">Lame</a>
+    <a class="lnk" href="#manche">Manche</a>
+    <a class="lnk" href="#prix">Prix</a>
+    <a class="lnk" href="#tokyo">Où acheter</a>
+    <a class="lnk" href="#pratique">Avion &amp; détaxe</a>
+    <a class="lnk" href="#entretien">Entretien</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="kanji" aria-hidden="true">刃</div>
+  <div class="wrap">
+    <div class="seal">GUIDE D'ACHAT · TOKYO 2026</div>
+    <h1>Acheter son couteau japonais sans se tromper</h1>
+    <p>Types, aciers, manches, tailles, budget… et tout ce qu'il faut savoir pour le ramener dans sa valise.</p>
+    <div class="tldr">
+      <b>En bref :</b> pour un premier couteau, prends un <b>gyuto de 210 mm en inox VG10</b> (ou un santoku de 165–180 mm), entre <b>105 et 170 €</b>. Ajoute un petty de 135 mm si ton budget le permet. Le tout en <b>soute</b>, et pense à passer à la <b>douane avant l'enregistrement</b> pour te faire rembourser la taxe.
+    </div>
+  </div>
+</header>
+
+<!-- TYPES -->
+<section id="types">
+  <div class="wrap">
+    <h2><small>01 · La forme</small>Quel couteau pour quel usage ?</h2>
+    <p class="lead">Filtre selon ce que tu cuisines le plus. Les couteaux marqués ★ sont les meilleurs premiers achats.</p>
+
+    <div class="filters" id="filters">
+      <button class="on" data-f="all">Tous</button>
+      <button data-f="poly">Polyvalent</button>
+      <button data-f="viande">Viande</button>
+      <button data-f="poisson">Poisson</button>
+      <button data-f="legumes">Légumes</button>
+      <button data-f="debutant">Débutant</button>
+    </div>
+
+    <div class="grid" id="cards"></div>
+
+    <div class="callout">
+      <b>Le duo qui couvre 95 % de la cuisine maison :</b> un gyuto de 210 mm et un petty de 135 mm. Si tu n'en prends qu'un seul : le gyuto (ou le santoku si tu préfères un couteau plus compact).
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz">
+  <div class="wrap">
+    <h2><small>02 · Recommandation</small>Trouve ton couteau en 4 questions</h2>
+    <p class="lead">Réponds aux 4 questions : la recommandation se met à jour automatiquement.</p>
+    <div class="quiz">
+      <div class="q" data-q="usage">
+        <label>Tu cuisines surtout…</label>
+        <div class="opts">
+          <button data-v="tout">Un peu de tout</button>
+          <button data-v="legumes">Beaucoup de légumes</button>
+          <button data-v="poisson">Du poisson entier / sashimi</button>
+          <button data-v="viande">Grosses pièces de viande</button>
+        </div>
+      </div>
+      <div class="q" data-q="entretien">
+        <label>L'entretien, pour toi c'est…</label>
+        <div class="opts">
+          <button data-v="min">Le minimum possible</button>
+          <button data-v="ok">Ça ne me dérange pas</button>
+        </div>
+      </div>
+      <div class="q" data-q="main">
+        <label>Tu es…</label>
+        <div class="opts">
+          <button data-v="d">Droitier</button>
+          <button data-v="g">Gaucher</button>
+        </div>
+      </div>
+      <div class="q" data-q="budget">
+        <label>Ton budget</label>
+        <div class="opts">
+          <button data-v="1">&lt; 85 €</button>
+          <button data-v="2">85 – 170 €</button>
+          <button data-v="3">170 – 340 €</button>
+          <button data-v="4">Sans limite</button>
+        </div>
+      </div>
+      <div id="result">Réponds aux questions ci-dessus pour obtenir une recommandation.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LAME -->
+<section id="lame">
+  <div class="wrap">
+    <h2><small>03 · La lame</small>Acier, biseau, dureté, finitions</h2>
+    <p class="lead">L'acier est le choix le plus important : c'est lui qui détermine le tranchant, la facilité d'affûtage et l'entretien au quotidien.</p>
+
+    <div class="cols">
+      <div class="box">
+        <h3>Inox <span class="pill g">Recommandé</span></h3>
+        <p><b>VG10, SG2/R2, Ginsan, AUS10</b></p>
+        <ul>
+          <li>Ne rouille pas, entretien facile</li>
+          <li>Le VG10 est la référence du milieu de gamme</li>
+          <li>Le SG2/R2 (acier en poudre) garde le tranchant plus longtemps, mais coûte plus cher</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Carbone <span class="pill o">Passionnés</span></h3>
+        <p><b>Shirogami (White #1/#2), Aogami (Blue #1/#2), Aogami Super</b></p>
+        <ul>
+          <li>Tranchant plus fin, plus facile à affûter</li>
+          <li>Rouille si on ne l'essuie pas immédiatement</li>
+          <li>Prend une patine avec le temps</li>
+          <li>Shirogami : plus pur. Aogami : plus résistant</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Hybride (san-mai)</h3>
+        <p><b>« Stainless clad »</b></p>
+        <ul>
+          <li>Cœur en carbone, entouré d'inox</li>
+          <li>Le tranchant du carbone, avec moins de rouille sur le reste de la lame</li>
+          <li>Un bon compromis</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cols" style="margin-top:18px">
+      <div class="box">
+        <h3>Biseau</h3>
+        <ul>
+          <li><b>Double biseau :</b> le standard polyvalent, pour droitiers comme pour gauchers</li>
+          <li><b>Simple biseau</b> (deba, yanagiba, usuba) : couteaux traditionnels, plus durs à affûter. <b>Les gauchers ont besoin d'une version spécifique.</b></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Dureté (HRC)</h3>
+        <ul>
+          <li>En général entre 60 et 64 HRC</li>
+          <li>Plus c'est dur, plus le tranchant tient… mais plus la lame est cassante</li>
+          <li>Jamais sur des os, des aliments congelés ou une planche en verre</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Finitions (surtout esthétiques)</h3>
+        <ul>
+          <li><b>Damas :</b> motif en couches</li>
+          <li><b>Tsuchime :</b> martelé, les aliments collent un peu moins</li>
+          <li><b>Kurouchi :</b> brut de forge, noir</li>
+          <li><b>Migaki :</b> poli miroir</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANCHE -->
+<section id="manche">
+  <div class="wrap">
+    <h2><small>04 · Le manche</small>Wa ou Yo ?</h2>
+    <div class="cols">
+      <div class="box">
+        <h3>和 Wa · japonais</h3>
+        <ul>
+          <li>En bois, octogonal ou en D</li>
+          <li>Plus léger, équilibré vers la lame : précis</li>
+          <li>Pour un manche en D, vérifie qu'il est fait pour ta main (droitier ou gaucher)</li>
+          <li>Il peut être remplacé quand il est usé</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>洋 Yo · occidental</h3>
+        <ul>
+          <li>Manche riveté, plus lourd</li>
+          <li>Prise en main familière quand on vient des couteaux européens</li>
+          <li>Équilibre plus en arrière, vers le manche</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout"><b>Conseil :</b> prends le couteau en main en magasin. Le confort est quelque chose de très personnel, et aucune fiche technique ne le remplace.</div>
+  </div>
+</section>
+
+<!-- PRIX -->
+<section id="prix">
+  <div class="wrap">
+    <h2><small>05 · Budget</small>Combien prévoir ?</h2>
+    <p class="lead">Fourchettes de prix constatées en magasin à Tokyo en 2026, taxes comprises. Prix convertis en euros au taux d'environ 175 ¥ pour 1 € ; en magasin, tout est affiché en yens, d'où le convertisseur.</p>
+    <div class="tblwrap">
+      <table class="tbl">
+        <thead><tr><th>Gamme</th><th>Prix (≈ €)</th><th>Ce que tu obtiens</th></tr></thead>
+        <tbody>
+          <tr><td><b>Entrée de gamme</b></td><td><b>45 – 85 €</b><br><small>¥8 000 – 15 000</small></td><td>Fabrication en série, VG10 ou équivalent. Excellent rapport qualité-prix.</td></tr>
+          <tr class="best"><td><b>Milieu de gamme ★</b></td><td><b>105 – 170 €</b><br><small>¥18 000 – 30 000</small></td><td>VG10 ou carbone, souvent forgé artisanalement. Exemple relevé : un gyuto VG10 de 210 mm à environ 140 € (¥24 400) à Kappabashi.</td></tr>
+          <tr><td><b>Haut de gamme</b></td><td><b>170 – 340 €</b><br><small>¥30 000 – 60 000</small></td><td>SG2, Aogami Super, finitions soignées, manche en bois noble.</td></tr>
+          <tr><td><b>Artisan réputé</b></td><td><b>340 € +</b><br><small>¥60 000 +</small></td><td>Pièce signée d'un forgeron réputé (Sakai, Seki, Takefu, Sanjō).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="conv">
+      <label for="yen"><b>Convertisseur rapide</b></label>
+      <input type="range" id="yen" min="5000" max="80000" step="1000" value="24000">
+      <output id="yenOut"></output>
+      <label style="font-size:.85rem;color:var(--ink-soft)">Taux ¥/€ :
+        <input type="number" id="rate" value="175" min="100" max="250" style="width:70px;font:inherit;padding:4px;border:1px solid var(--line);border-radius:6px">
+      </label>
+    </div>
+
+    <div class="cols" style="margin-top:18px">
+      <div class="box">
+        <h3>Accessoires à prévoir</h3>
+        <ul>
+          <li>Pierre à aiguiser double face 1000/6000 : ~17 – 35 €</li>
+          <li>Saya (fourreau en bois) ou protège-lame : ~10 – 25 €</li>
+          <li>Gravure du nom en kanji : souvent offerte ou à quelques euros</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOKYO -->
+<section id="tokyo">
+  <div class="wrap">
+    <h2><small>06 · Où acheter</small>Kappabashi, le quartier des couteaux</h2>
+    <p class="lead">Kappabashi (合羽橋), entre Ueno et Asakusa : une rue d'environ 800 m consacrée aux ustensiles de cuisine, avec plus de 170 boutiques, dont une quinzaine spécialisées dans les couteaux.</p>
+    <div class="grid">
+      <div class="card"><div class="jp">釜浅商店</div><h3>Kama-Asa</h3><p>Grande maison historique, sélection très soignée et marques maison.</p></div>
+      <div class="card"><div class="jp">つば屋</div><h3>Tsubaya</h3><p>Très large choix, du santoku d'entrée de gamme aux couteaux professionnels.</p></div>
+      <div class="card"><div class="jp">ユニオンコマース</div><h3>Union Commerce</h3><p>Grand choix, vendeurs qui parlent anglais.</p></div>
+      <div class="card"><div class="jp">杉本刃物</div><h3>Sugimoto</h3><p>Couteaux de qualité professionnelle.</p></div>
+      <div class="card"><div class="jp">かまた</div><h3>Kamata</h3><p>Plus de 100 ans d'existence, affûtage à la main.</p></div>
+      <div class="card"><div class="jp">實光</div><h3>Jikko</h3><p>Coutelier de Sakai, réputé pour ses couteaux traditionnels.</p></div>
+    </div>
+    <div class="callout">
+      <b>Astuces :</b> vas-y en semaine le matin, quand il y a moins de monde. Dis au vendeur ce que tu cherches en une phrase, par exemple : <i>« Gyuto 210 mm, stainless, home use, budget 25 000 yen »</i> (≈ 140 €). Garde ton passeport sur toi pour la détaxe.
+    </div>
+  </div>
+</section>
+
+<!-- PRATIQUE -->
+<section id="pratique">
+  <div class="wrap">
+    <h2><small>07 · Logistique</small>Avion et détaxe</h2>
+    <div class="cols">
+      <div class="box warn">
+        <h3>✈️ Couteau = bagage en soute</h3>
+        <ul>
+          <li>Il est interdit en cabine, sans exception</li>
+          <li>Sur une compagnie low-cost (Jetstar, Tigerair, Peach…), <b>vérifie que ton billet inclut un bagage en soute</b>. Sinon, ajoute-le en ligne avant le départ : c'est beaucoup moins cher qu'au comptoir.</li>
+          <li>Emballe-le dans son saya ou son carton, puis enveloppe-le dans des vêtements</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>🧾 Nouvelle détaxe (depuis le 1<sup>er</sup> nov. 2026)</h3>
+        <p>Le Japon est passé à un système de <b>remboursement</b> : tu paies le prix TTC en magasin, puis tu récupères les 10 % de taxe au départ.</p>
+      </div>
+    </div>
+    <h3 style="margin-top:28px">Étapes</h3>
+    <ol class="steps">
+      <li><b>En magasin :</b> présente ton passeport original (une photocopie n'est pas acceptée). Il faut au moins ¥5 000 HT d'achats (~30 €) dans le même magasin.</li>
+      <li><b>Garde le ticket</b> et le couteau ensemble, dans son emballage.</li>
+      <li><b>À l'aéroport, AVANT l'enregistrement :</b> passe au guichet ou à la borne de la douane pour présenter le couteau et le ticket.</li>
+      <li><b>Ensuite seulement</b>, mets le couteau dans ta valise et enregistre-la en soute.</li>
+      <li>Le remboursement arrive après validation par la douane. Attention : si un article d'un ticket manque, tout le ticket peut être refusé.</li>
+    </ol>
+    <div class="callout"><b>Autre option :</b> certaines boutiques expédient directement à l'étranger, en exonération de taxe. Pratique si tu ne veux pas voyager avec le couteau.</div>
+  </div>
+</section>
+
+<!-- ENTRETIEN -->
+<section id="entretien">
+  <div class="wrap">
+    <h2><small>08 · Entretien</small>Le garder affûté pendant 20 ans</h2>
+    <div class="cols">
+      <div class="box">
+        <h3>✅ À faire</h3>
+        <ul>
+          <li>Laver à la main, puis essuyer immédiatement</li>
+          <li>Utiliser une planche en bois (idéalement) ou en plastique</li>
+          <li>Affûter à la pierre à eau</li>
+          <li>Ranger dans un saya, sur un support aimanté ou dans un bloc</li>
+          <li>Acier carbone : une goutte d'huile alimentaire si tu ne t'en sers pas pendant longtemps</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>❌ À éviter</h3>
+        <ul>
+          <li>Le lave-vaisselle</li>
+          <li>Les planches en verre, en marbre ou en ardoise</li>
+          <li>Les os, les aliments congelés, les coquilles</li>
+          <li>Le fusil en acier et les aiguiseurs à roulettes</li>
+          <li>Faire glisser les aliments sur la planche avec le tranchant (utilise le dos de la lame)</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:30px">📝 Checklist avant de partir</h3>
+    <div class="box check" id="checklist">
+      <label><input type="checkbox"><span>J'ai choisi le type de couteau et la taille</span></label>
+      <label><input type="checkbox"><span>J'ai fixé mon budget (couteau + pierre + saya)</span></label>
+      <label><input type="checkbox"><span>Mon vol retour inclut un bagage en soute</span></label>
+      <label><input type="checkbox"><span>J'ai mon passeport original sur moi pour l'achat</span></label>
+      <label><input type="checkbox"><span>Je prévois du temps pour la douane avant l'enregistrement</span></label>
+      <label><input type="checkbox"><span>J'ai prévu de quoi protéger la lame dans la valise</span></label>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Prix et règles indicatifs, relevés en novembre 2026 : à vérifier sur place. Le taux de change est approximatif.</p>
+    <p><b>Sources</b></p>
+    <ul>
+      <li><a href="https://japanese-knife-lab.pages.dev/en/guide/knife-shopping-kappabashi/" target="_blank" rel="noopener">Japanese Knife Lab : guide de Kappabashi</a></li>
+      <li><a href="https://japanese-knife-lab.pages.dev/en/best/under-150-kappabashi/" target="_blank" rel="noopener">Japanese Knife Lab : test de santokus à Kappabashi</a></li>
+      <li><a href="https://deeptokyo.jp/en/?p=8387" target="_blank" rel="noopener">Deep Tokyo : Kama-Asa</a></li>
+      <li><a href="https://tokyocheapo.com/shopping-2/tax-free-shopping-japan/" target="_blank" rel="noopener">Tokyo Cheapo : détaxe au Japon</a></li>
+      <li><a href="https://www.japan.travel/en/us/blog/everything-you-need-to-know-japans-new-tax-free-shopping-system/" target="_blank" rel="noopener">JNTO : nouveau système de détaxe</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+/* ---------- CARDS ---------- */
+const knives = [
+  {jp:"牛刀", name:"Gyuto", star:true, size:"210 mm (240 mm si tu es à l'aise)",
+   desc:"L'équivalent japonais du couteau de chef. Viande, poisson, légumes : il fait tout.",
+   f:["poly","viande","poisson","legumes","debutant"], shape:"gyuto"},
+  {jp:"三徳", name:"Santoku", star:true, size:"165 – 180 mm",
+   desc:"« Trois vertus ». Polyvalent, plus court, avec un bout arrondi. Idéal dans une petite cuisine.",
+   f:["poly","viande","poisson","legumes","debutant"], shape:"santoku"},
+  {jp:"文化", name:"Bunka / Kiritsuke-santoku", star:false, size:"165 – 190 mm",
+   desc:"Un santoku avec une pointe en K, plus précis. Une alternative avec du caractère.",
+   f:["poly","legumes"], shape:"bunka"},
+  {jp:"菜切", name:"Nakiri", star:false, size:"165 mm",
+   desc:"Spécial légumes : lame plate et rectangulaire qui touche la planche sur toute sa longueur.",
+   f:["legumes","debutant"], shape:"nakiri"},
+  {jp:"ペティ", name:"Petty", star:true, size:"120 – 150 mm",
+   desc:"Le petit couteau d'office : éplucher, parer, fruits. Le complément idéal d'un gyuto.",
+   f:["poly","legumes","debutant"], shape:"petty"},
+  {jp:"筋引", name:"Sujihiki", star:false, size:"240 – 270 mm",
+   desc:"Long et fin, pour trancher la viande cuite ou le poisson cru d'un seul geste.",
+   f:["viande","poisson"], shape:"suji"},
+  {jp:"出刃", name:"Deba", star:false, size:"150 – 180 mm",
+   desc:"Lame lourde à simple biseau, pour lever les filets d'un poisson entier.",
+   f:["poisson"], shape:"deba"},
+  {jp:"柳刃", name:"Yanagiba", star:false, size:"240 – 300 mm",
+   desc:"Le couteau à sashimi. Simple biseau, coupe en un seul geste. Pour les passionnés.",
+   f:["poisson"], shape:"yanagi"},
+];
+
+const shapes = {
+  gyuto:  "M10 30 L150 30 Q185 30 195 18 L195 18 Q150 12 60 12 L10 12 Z",
+  santoku:"M10 30 L160 30 Q190 30 192 16 Q170 10 60 10 L10 10 Z",
+  bunka:  "M10 30 L165 30 L195 16 L180 8 L10 8 Z",
+  nakiri: "M10 32 L180 32 L182 8 L10 8 Z",
+  petty:  "M60 26 L150 26 Q175 26 185 18 Q150 16 60 16 Z",
+  suji:   "M10 26 L170 26 Q195 26 198 18 Q170 14 10 14 Z",
+  deba:   "M20 32 L150 32 Q185 30 190 14 Q140 6 20 6 Z",
+  yanagi: "M10 24 L180 24 Q198 22 198 16 Q180 16 10 14 Z",
+};
+
+function bladeSVG(k){
+  const p = shapes[k.shape];
+  const handleX = k.shape==="petty" ? 60 : 10;
+  return `<svg class="blade" viewBox="-60 0 270 40" aria-hidden="true">
+    <rect x="${handleX-62}" y="14" width="60" height="14" rx="4" fill="#5b3b25"/>
+    <rect x="${handleX-6}" y="13" width="8" height="16" rx="2" fill="#2a2723"/>
+    <path d="${p}" fill="#c9d1d7" stroke="#6b7a86" stroke-width="1"/>
+  </svg>`;
+}
+
+const cardsEl = document.getElementById('cards');
+cardsEl.innerHTML = knives.map(k => `
+  <div class="card" data-f="${k.f.join(' ')}">
+    ${bladeSVG(k)}
+    <div class="jp">${k.jp}</div>
+    <h3>${k.name}${k.star ? ' ★' : ''}</h3>
+    <p>${k.desc}</p>
+    <div class="tags">
+      <span class="tag">${k.size}</span>
+      ${k.star ? '<span class="tag star">Premier achat</span>' : ''}
+    </div>
+  </div>`).join('');
+
+document.getElementById('filters').addEventListener('click', e => {
+  const b = e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#filters button').forEach(x => x.classList.toggle('on', x===b));
+  const f = b.dataset.f;
+  document.querySelectorAll('#cards .card').forEach(c => {
+    c.classList.toggle('hide', f!=='all' && !c.dataset.f.split(' ').includes(f));
+  });
+});
+
+/* ---------- QUIZ ---------- */
+const answers = {};
+document.querySelectorAll('.q').forEach(q => {
+  q.addEventListener('click', e => {
+    const b = e.target.closest('button'); if(!b) return;
+    q.querySelectorAll('button').forEach(x => x.classList.toggle('on', x===b));
+    answers[q.dataset.q] = b.dataset.v;
+    renderResult();
+  });
+});
+
+function renderResult(){
+  const r = document.getElementById('result');
+  if(Object.keys(answers).length < 4){
+    r.innerHTML = `Encore ${4-Object.keys(answers).length} question(s)…`; return;
+  }
+  const {usage, entretien, main, budget} = answers;
+  let knife, size;
+  if(usage==='legumes'){ knife='Nakiri (ou santoku si tu veux rester polyvalent)'; size='165 mm'; }
+  else if(usage==='poisson'){ knife = main==='g' ? 'Gyuto + petty (les deba et yanagiba à simple biseau existent en version gaucher, mais c\'est plus rare et plus cher)' : 'Deba pour lever les filets + yanagiba pour les sashimis (à compléter par un gyuto pour le quotidien)'; size='Deba 165 mm, yanagiba 270 mm'; }
+  else if(usage==='viande'){ knife='Gyuto (+ sujihiki si tu tranches souvent des rôtis)'; size='240 mm'; }
+  else { knife='Gyuto'; size='210 mm'; }
+
+  const steel = entretien==='min'
+    ? (budget>=3 ? 'Inox SG2/R2' : 'Inox VG10')
+    : (budget>=3 ? 'Aogami Super ou Shirogami #1, idéalement avec un revêtement inox (san-mai)' : 'Shirogami #2 ou Aogami #2, avec un revêtement inox (san-mai)');
+
+  const price = {1:'45 – 85 € (¥8 000 – 15 000)',2:'105 – 170 € (¥18 000 – 30 000)',3:'170 – 340 € (¥30 000 – 60 000)',4:'340 € + (pièce d\'artisan)'}[budget];
+  const handle = main==='g' ? 'Manche wa octogonal ou yo (évite le manche en D pour droitier)' : 'Manche wa (léger, précis) ou yo, selon ton ressenti en main';
+
+  r.innerHTML = `
+    <b>Couteau :</b> ${knife}<br>
+    <b>Taille :</b> ${size}<br>
+    <b>Acier :</b> ${steel}<br>
+    <b>Manche :</b> ${handle}<br>
+    <b>Budget visé :</b> ${price}<br>
+    <b>À ajouter :</b> pierre 1000/6000 + saya`;
+}
+
+/* ---------- CONVERTER ---------- */
+const yen = document.getElementById('yen'), out = document.getElementById('yenOut'), rate = document.getElementById('rate');
+function conv(){
+  const y = +yen.value, rt = +rate.value || 175;
+  out.textContent = `¥${y.toLocaleString('fr-FR')} ≈ ${Math.round(y/rt).toLocaleString('fr-FR')} €`;
+}
+yen.addEventListener('input', conv); rate.addEventListener('input', conv); conv();
+</script>
+</body>
+</html>
