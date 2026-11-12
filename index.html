@@ -137,6 +137,38 @@
     header.hero{padding:60px 0 50px}
     section{padding:50px 0}
   }
+  /* CONFIGURATEUR */
+  .wiz{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 10px 30px rgba(0,0,0,.04)}
+  .wiz-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px;font-size:.88rem;color:var(--ink-soft)}
+  .bar{height:6px;background:var(--paper-2);border-radius:99px;overflow:hidden;margin-bottom:24px}
+  .bar i{display:block;height:100%;background:var(--red);width:0;transition:width .3s}
+  .wiz h3{font-size:1.5rem}
+  .wiz .hint{color:var(--ink-soft);margin:-4px 0 18px;font-size:.95rem}
+  .wopts{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+  .wopts button{text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;
+      cursor:pointer;font:inherit;color:var(--ink);transition:.15s}
+  .wopts button:hover{border-color:var(--ink);transform:translateY(-1px)}
+  .wopts button.on{border-color:var(--red);background:#fbf0ec}
+  .wopts button b{display:block;margin-bottom:2px}
+  .wopts button small{color:var(--ink-soft);font-size:.82rem;line-height:1.35;display:block}
+  .wnav{display:flex;justify-content:space-between;margin-top:22px}
+  .btn{background:var(--ink);color:var(--paper);border:none;border-radius:999px;padding:10px 20px;font:inherit;cursor:pointer}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn:disabled{opacity:.35;cursor:default}
+  .spec-title{font-family:"Noto Serif JP",serif;font-size:clamp(1.4rem,3vw,2rem);margin:6px 0 4px}
+  .spec-sub{color:var(--ink-soft);margin-bottom:20px}
+  .spec{width:100%;border-collapse:collapse;margin-bottom:20px}
+  .spec td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .spec td:first-child{width:34%;color:var(--ink-soft);font-size:.9rem}
+  .spec td:last-child{font-weight:500}
+  .why li{margin-bottom:6px}
+  .phrase{background:var(--ink);color:var(--paper);border-radius:12px;padding:18px 20px;margin:18px 0}
+  .phrase .jpbig{font-family:"Noto Serif JP",serif;font-size:1.15rem;line-height:1.7}
+  .phrase .en{color:#c8c0b4;font-size:.92rem;margin-top:8px}
+  .warnbox{background:#fff4f2;border:1px solid #f0c4bd;border-radius:12px;padding:12px 16px;margin:12px 0}
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+  @media print{nav,header,section:not(#configurateur),footer,.actions,.wnav,.wiz-top,.bar{display:none!important}
+    #configurateur{padding:0;border:none}.wiz{border:none;box-shadow:none}}
 </style>
 </head>
 <body>
@@ -145,7 +177,8 @@
   <div class="wrap">
     <div class="logo"><span>包丁</span> Hōchō</div>
     <a class="lnk" href="#types">Types</a>
-    <a class="lnk" href="#quiz">Lequel choisir ?</a>
+    <a class="lnk" href="#quiz">Quiz rapide</a>
+    <a class="lnk" href="#configurateur">Configurateur</a>
     <a class="lnk" href="#lame">Lame</a>
     <a class="lnk" href="#manche">Manche</a>
     <a class="lnk" href="#prix">Prix</a>
@@ -193,8 +226,8 @@
 <!-- QUIZ -->
 <section id="quiz">
   <div class="wrap">
-    <h2><small>02 · Recommandation</small>Trouve ton couteau en 4 questions</h2>
-    <p class="lead">Réponds aux 4 questions : la recommandation se met à jour automatiquement.</p>
+    <h2><small>02 · Recommandation rapide</small>Trouve ton couteau en 4 questions</h2>
+    <p class="lead">Réponds aux 4 questions : la recommandation se met à jour automatiquement. Pour une fiche détaillée, utilise le configurateur complet juste en dessous.</p>
     <div class="quiz">
       <div class="q" data-q="usage">
         <label>Tu cuisines surtout…</label>
@@ -233,10 +266,19 @@
   </div>
 </section>
 
+<!-- CONFIGURATEUR -->
+<section id="configurateur">
+  <div class="wrap">
+    <h2><small>03 · Configurateur complet</small>La fiche exacte de TON couteau</h2>
+    <p class="lead">13 questions sur ta cuisine, ta main, ton niveau et ton budget. À la fin, tu obtiens une fiche technique complète (type, longueur, acier, biseau, manche, finition, poids, prix), ainsi qu'une phrase en japonais à montrer au vendeur.</p>
+    <div class="wiz" id="wiz"></div>
+  </div>
+</section>
+
 <!-- LAME -->
 <section id="lame">
   <div class="wrap">
-    <h2><small>03 · La lame</small>Acier, biseau, dureté, finitions</h2>
+    <h2><small>04 · La lame</small>Acier, biseau, dureté, finitions</h2>
     <p class="lead">L'acier est le choix le plus important : c'est lui qui détermine le tranchant, la facilité d'affûtage et l'entretien au quotidien.</p>
 
     <div class="cols">
@@ -302,7 +344,7 @@
 <!-- MANCHE -->
 <section id="manche">
   <div class="wrap">
-    <h2><small>04 · Le manche</small>Wa ou Yo ?</h2>
+    <h2><small>05 · Le manche</small>Wa ou Yo ?</h2>
     <div class="cols">
       <div class="box">
         <h3>和 Wa · japonais</h3>
@@ -329,7 +371,7 @@
 <!-- PRIX -->
 <section id="prix">
   <div class="wrap">
-    <h2><small>05 · Budget</small>Combien prévoir ?</h2>
+    <h2><small>06 · Budget</small>Combien prévoir ?</h2>
     <p class="lead">Fourchettes de prix constatées en magasin à Tokyo en 2026, taxes comprises. Prix convertis en euros au taux d'environ 175 ¥ pour 1 € ; en magasin, tout est affiché en yens, d'où le convertisseur.</p>
     <div class="tblwrap">
       <table class="tbl">
@@ -368,7 +410,7 @@
 <!-- TOKYO -->
 <section id="tokyo">
   <div class="wrap">
-    <h2><small>06 · Où acheter</small>Kappabashi, le quartier des couteaux</h2>
+    <h2><small>07 · Où acheter</small>Kappabashi, le quartier des couteaux</h2>
     <p class="lead">Kappabashi (合羽橋), entre Ueno et Asakusa : une rue d'environ 800 m consacrée aux ustensiles de cuisine, avec plus de 170 boutiques, dont une quinzaine spécialisées dans les couteaux.</p>
     <div class="grid">
       <div class="card"><div class="jp">釜浅商店</div><h3>Kama-Asa</h3><p>Grande maison historique, sélection très soignée et marques maison.</p></div>
@@ -387,7 +429,7 @@
 <!-- PRATIQUE -->
 <section id="pratique">
   <div class="wrap">
-    <h2><small>07 · Logistique</small>Avion et détaxe</h2>
+    <h2><small>08 · Logistique</small>Avion et détaxe</h2>
     <div class="cols">
       <div class="box warn">
         <h3>✈️ Couteau = bagage en soute</h3>
@@ -417,7 +459,7 @@
 <!-- ENTRETIEN -->
 <section id="entretien">
   <div class="wrap">
-    <h2><small>08 · Entretien</small>Le garder affûté pendant 20 ans</h2>
+    <h2><small>09 · Entretien</small>Le garder affûté pendant 20 ans</h2>
     <div class="cols">
       <div class="box">
         <h3>✅ À faire</h3>
@@ -585,6 +627,291 @@ function conv(){
   out.textContent = `¥${y.toLocaleString('fr-FR')} ≈ ${Math.round(y/rt).toLocaleString('fr-FR')} €`;
 }
 yen.addEventListener('input', conv); rate.addEventListener('input', conv); conv();
+
+/* ---------- CONFIGURATEUR COMPLET ---------- */
+const QS = [
+  {id:'usage', t:"Qu'est-ce que tu cuisines le plus ?", o:[
+    ['tout','Un peu de tout','Viande, légumes, poisson au quotidien'],
+    ['legumes','Surtout des légumes','Émincer, ciseler, julienne'],
+    ['viande','Surtout de la viande','Émincés, rôtis, découpe'],
+    ['poissonEntier','Du poisson entier','Lever des filets, couper têtes et arêtes'],
+    ['sashimi','Sashimi / poisson cru','Tranches nettes en un seul geste']]},
+  {id:'coupe', t:'Comment est-ce que tu coupes ?', h:"Regarde-toi couper un oignon : comment bouge ta lame ?", o:[
+    ['bascule','En bascule','La pointe reste sur la planche et le talon monte et descend (style français)'],
+    ['vertical','Hachage vertical','Toute la lame monte et descend d’un coup'],
+    ['tire','Poussé / tiré','La lame glisse d’avant en arrière en descendant'],
+    ['nsp','Je ne sais pas','Pas de technique particulière']]},
+  {id:'planche', t:'Quelle est la taille de ta planche ou de ton plan de travail ?', o:[
+    ['petite','Petite','Moins de 35 cm, cuisine étudiante'],
+    ['moyenne','Moyenne','Entre 35 et 45 cm'],
+    ['grande','Grande','Plus de 45 cm, de l’espace']]},
+  {id:'mainTaille', t:'Quelle est la taille de ta main ?', o:[
+    ['petite','Petite','Gants S'],['moyenne','Moyenne','Gants M'],['grande','Grande','Gants L / XL']]},
+  {id:'lateralite', t:'Tu es…', o:[['d','Droitier',''],['g','Gaucher','']]},
+  {id:'niveau', t:'Quel est ton niveau ?', o:[
+    ['debutant','Débutant','Ce sera mon premier vrai couteau'],
+    ['inter','Intermédiaire','Je cuisine souvent, je suis à l’aise'],
+    ['avance','Avancé','Technique solide, je connais les couteaux japonais']]},
+  {id:'poids', t:'Tu préfères un couteau…', o:[
+    ['leger','Léger et agile','Il se fait oublier dans la main'],
+    ['moyen','Équilibré','Ni trop léger, ni trop lourd'],
+    ['lourd','Lourd','Il « tombe » tout seul à travers l’aliment']]},
+  {id:'habitude', t:'Quels couteaux as-tu aujourd’hui ?', o:[
+    ['euro','Des couteaux européens','Wüsthof, Sabatier, Opinel…'],
+    ['rien','Rien de spécial','Des couteaux de base ou pas de couteau'],
+    ['jap','Déjà un couteau japonais','Je connais le style']]},
+  {id:'entretien', t:'Que penses-tu de l’entretien (essuyer, rouille, patine) ?', o:[
+    ['min','Le minimum possible','Je veux pouvoir le laisser mouillé 10 min'],
+    ['ok','Ça me va','J’essuie après chaque usage'],
+    ['passion','J’adore ça','La patine qui se forme, c’est beau']]},
+  {id:'affutage', t:'Et l’affûtage ?', o:[
+    ['non','Je n’affûterai pas','Je le ferai affûter en coutellerie'],
+    ['apprendre','Je veux apprendre','À la pierre à eau'],
+    ['oui','Je sais déjà affûter','À la pierre']]},
+  {id:'style', t:'Quel look te plaît ?', o:[
+    ['sobre','Sobre, poli','Migaki / kasumi satiné'],
+    ['damas','Damas','Motif en vagues'],
+    ['tsuchime','Martelé','Tsuchime, les aliments collent moins'],
+    ['kurouchi','Rustique noir','Kurouchi, brut de forge'],
+    ['egal','Peu importe','Seule la performance compte']]},
+  {id:'nb', t:'Combien de couteaux veux-tu acheter ?', o:[
+    ['1','Un seul','Le couteau principal'],['2','Deux','Principal + complément'],['3','Trois','Un petit set']]},
+  {id:'budget', t:'Quel budget pour le couteau principal ?', o:[
+    ['1','Moins de 85 €','¥8 000 – 15 000'],['2','85 – 170 €','¥15 000 – 30 000'],
+    ['3','170 – 340 €','¥30 000 – 60 000'],['4','340 € et plus','¥60 000 +']]},
+];
+
+const TYPES = {
+  gyuto:{fr:'Gyuto',jp:'牛刀',en:'Gyuto (chef knife)'},
+  santoku:{fr:'Santoku',jp:'三徳包丁',en:'Santoku'},
+  bunka:{fr:'Bunka',jp:'文化包丁',en:'Bunka'},
+  nakiri:{fr:'Nakiri',jp:'菜切包丁',en:'Nakiri'},
+  deba:{fr:'Deba',jp:'出刃包丁',en:'Deba'},
+  yanagiba:{fr:'Yanagiba',jp:'柳刃包丁',en:'Yanagiba'},
+  sujihiki:{fr:'Sujihiki',jp:'筋引',en:'Sujihiki (slicer)'},
+  petty:{fr:'Petty',jp:'ペティナイフ',en:'Petty'},
+};
+
+let wStep = 0; const wAns = {};
+const wiz = document.getElementById('wiz');
+
+function renderWiz(){
+  if(wStep >= QS.length){ return renderSpec(); }
+  const q = QS[wStep];
+  wiz.innerHTML = `
+    <div class="wiz-top"><span>Question ${wStep+1} / ${QS.length}</span><span>${Math.round(wStep/QS.length*100)} %</span></div>
+    <div class="bar"><i style="width:${wStep/QS.length*100}%"></i></div>
+    <h3>${q.t}</h3>${q.h?`<p class="hint">${q.h}</p>`:''}
+    <div class="wopts">${q.o.map(([v,t,d])=>`
+      <button data-v="${v}" class="${wAns[q.id]===v?'on':''}"><b>${t}</b>${d?`<small>${d}</small>`:''}</button>`).join('')}
+    </div>
+    <div class="wnav">
+      <button class="btn ghost" id="wPrev" ${wStep===0?'disabled':''}>← Retour</button>
+      <button class="btn" id="wNext" ${wAns[q.id]?'':'disabled'}>${wStep===QS.length-1?'Voir ma fiche →':'Suivant →'}</button>
+    </div>`;
+  wiz.querySelectorAll('.wopts button').forEach(b=>b.onclick=()=>{
+    wAns[q.id]=b.dataset.v; wStep++; renderWiz();
+  });
+  document.getElementById('wPrev').onclick=()=>{ if(wStep>0){wStep--;renderWiz();} };
+  document.getElementById('wNext').onclick=()=>{ if(wAns[q.id]){wStep++;renderWiz();} };
+}
+
+function computeKnife(a){
+  const lvl = {debutant:0,inter:1,avance:2}[a.niveau];
+  const b = +a.budget, g = a.lateralite==='g';
+  const why = [], warn = [];
+  let type;
+
+  // 1. TYPE
+  switch(a.usage){
+    case 'legumes':
+      if(a.coupe==='vertical'||a.coupe==='tire'){ type='nakiri'; why.push('Tu coupes surtout des légumes, en hachage vertical ou en poussé-tiré : la lame plate du nakiri touche la planche sur toute sa longueur, donc plus de rondelles qui restent attachées.'); }
+      else if(a.coupe==='bascule'){ type='gyuto'; why.push('Tu coupes en bascule : il te faut une lame avec du « ventre » (une courbe). Un nakiri, trop plat, ne te conviendrait pas.'); }
+      else { type='santoku'; why.push('Pour les légumes, sans technique particulière, le santoku est le plus facile à prendre en main.'); }
+      break;
+    case 'viande':
+      type='gyuto'; why.push('Pour la viande, le gyuto (qui vient du couteau de chef occidental) est le plus adapté : sa lame longue tranche en un seul mouvement.'); break;
+    case 'poissonEntier':
+      if(lvl>=1){ type='deba'; why.push('Pour lever des filets et couper les têtes, il faut un deba : une lame épaisse et lourde, à simple biseau.'); }
+      else { type='gyuto'; why.push('Le deba (spécial poisson entier) demande de la technique. Pour débuter, un gyuto fait l’essentiel du travail ; tu pourras prendre un deba plus tard.'); }
+      break;
+    case 'sashimi':
+      if(lvl>=1){ type='yanagiba'; why.push('Pour des sashimis parfaits, il faut un yanagiba : sa lame longue à simple biseau tranche en un seul geste tiré, sans écraser la chair.'); }
+      else { type='sujihiki'; why.push('Le yanagiba (simple biseau) est exigeant. Le sujihiki, à double biseau, donne des tranches très nettes et reste plus facile à utiliser.'); }
+      break;
+    default:
+      if(a.planche==='petite'||a.mainTaille==='petite'||a.coupe==='vertical'){
+        type = lvl>=1 ? 'bunka' : 'santoku';
+        why.push(`Polyvalent et compact : ${a.planche==='petite'?'ta petite planche':a.mainTaille==='petite'?'ta main plutôt petite':'ta coupe verticale'} va mieux avec une lame courte et plate. ${type==='bunka'?'Le bunka ajoute une pointe en K, plus précise pour les ciselages.':''}`);
+      } else { type='gyuto'; why.push('Tu veux un couteau polyvalent et tu as de la place : le gyuto est le meilleur couteau à tout faire.'); }
+  }
+  const single = (type==='deba'||type==='yanagiba');
+
+  // 2. LONGUEUR
+  let len;
+  if(type==='gyuto'){ len = a.planche==='petite'?180 : (a.planche==='grande'&&(lvl===2||a.mainTaille==='grande'))?240 : 210; }
+  else if(type==='santoku'||type==='bunka'){ len = (a.planche==='petite'||a.mainTaille==='petite')?165:180; }
+  else if(type==='nakiri'){ len=165; }
+  else if(type==='deba'){ len = a.planche==='petite'?150:165; }
+  else if(type==='yanagiba'){ len = a.planche==='petite'?240 : (lvl===2&&a.planche==='grande')?300:270; }
+  else if(type==='sujihiki'){ len = a.planche==='petite'?240:270; }
+  why.push(`Pour la longueur, j'ai retenu ${len} mm, adaptée à ${a.planche==='petite'?'une petite planche':a.planche==='grande'?'une grande planche':'une planche moyenne'}${a.mainTaille!=='moyenne'?` et à une main ${a.mainTaille}`:''}.`);
+
+  // 3. ACIER
+  let steel;
+  const inox = a.entretien==='min' || (a.entretien==='ok' && a.affutage==='non');
+  if(inox){
+    if(single) steel={fr:'Ginsan (Silver #3), inox',jp:'銀三',en:'Ginsan stainless',hrc:'60–61',rust:'Inoxydable',cons:'Monoacier ou san-mai inox',easy:'Facile à affûter'};
+    else if(a.affutage==='non'||b===1) steel={fr:'VG10, inox',jp:'VG10',en:'VG10 stainless',hrc:'60–61',rust:'Inoxydable',cons:'San-mai (cœur VG10, revêtement inox)',easy:'Facile à affûter, pardonne les erreurs'};
+    else if(b>=3) steel={fr:'SG2 / R2, inox en poudre',jp:'SG2（R2）',en:'SG2/R2 powder stainless',hrc:'62–64',rust:'Inoxydable',cons:'San-mai (cœur SG2, revêtement inox)',easy:'Tranchant très durable, affûtage un peu plus long'};
+    else steel={fr:'Ginsan (Silver #3), inox',jp:'銀三',en:'Ginsan stainless',hrc:'60–61',rust:'Inoxydable',cons:'Monoacier ou san-mai inox',easy:'Inox au « toucher carbone » : affûtage très agréable'};
+    why.push(`Côté acier, j'ai choisi de l'inox (${steel.fr.split(',')[0]}), puisque tu veux ${a.entretien==='min'?'un entretien minimal':'éviter l’affûtage'}.`);
+  } else if(a.entretien==='ok'){
+    const s = a.affutage==='oui' ? (b>=3?['Aogami Super','青紙スーパー','62–64']:['Aogami #2 (Blue #2)','青紙2号','61–63']) : ['Shirogami #2 (White #2)','白紙2号','60–62'];
+    steel={fr:`${s[0]}, carbone avec revêtement inox`,jp:`${s[1]}（ステンレスクラッド）`,en:`${s[0]} carbon, stainless clad`,hrc:s[2],rust:'Seul le tranchant rouille : il faut l’essuyer',cons:'San-mai : cœur carbone, flancs en inox',easy:a.affutage==='oui'?'Tranchant durable':'Très facile à affûter : parfait pour apprendre'};
+    why.push(`J'ai choisi de l'acier carbone avec un revêtement inox : tu as le tranchant du carbone, mais seul le fil de la lame demande de l'attention. ${a.affutage==='apprendre'?'Le Shirogami est le plus facile à apprendre à affûter.':''}`);
+  } else {
+    let s = a.affutage==='oui' ? (b>=3?['Shirogami #1 (White #1)','白紙1号','62–64']:['Aogami #2 (Blue #2)','青紙2号','61–63']) : ['Shirogami #2 (White #2)','白紙2号','60–62'];
+    if(b>=3 && lvl===2 && a.affutage==='oui' && !single) s=['Aogami Super','青紙スーパー','62–64'];
+    steel={fr:`${s[0]}, carbone avec revêtement en fer doux`,jp:s[1],en:`${s[0]} carbon, iron clad`,hrc:s[2],rust:'Toute la lame se patine et peut rouiller',cons:'San-mai traditionnel (cœur carbone, fer doux)',easy:'Le tranchant le plus fin, et le plus agréable à affûter'};
+    why.push('Tu aimes entretenir ton couteau : j\'ai choisi un carbone traditionnel. La patine fait partie du plaisir.');
+    if(b===4 && lvl===2 && single) warn.push('Avec ton budget et ton niveau, tu peux regarder des couteaux honyaki (monoacier trempé à l’argile). C’est le sommet de la coutellerie traditionnelle, mais ils sont fragiles et chers.');
+  }
+
+  // 4. BISEAU
+  let bevel;
+  if(single){
+    bevel = g ? 'Simple biseau GAUCHER (左利き用)' : 'Simple biseau droitier';
+    if(g) warn.push('Les couteaux à simple biseau pour gaucher (hidari) coûtent 30 à 50 % plus cher et sont souvent à commander. Demande « hidari-kiki-yō » (左利き用) dès le début.');
+  } else {
+    bevel = g ? 'Double biseau symétrique 50/50 (certains sont affûtés 70/30 pour droitier : précise que tu es gaucher)' : 'Double biseau (50/50 ou 70/30)';
+  }
+
+  // 5. PROFIL / ÉPAISSEUR
+  let grind;
+  if(single) grind = type==='deba' ? 'Lame épaisse (6–9 mm au dos), pour couper les arêtes' : 'Lame fine et longue, avec un dos droit';
+  else if(lvl===0 || a.poids==='lourd') grind = 'Lame « workhorse », un peu épaisse (2–2,5 mm au talon), robuste et tolérante';
+  else if(lvl===2 && a.poids==='leger') grind = 'Lame « laser », très fine (moins de 1,8 mm), avec une coupe exceptionnelle mais fragile';
+  else grind = 'Épaisseur moyenne (environ 2 mm), un bon équilibre entre finesse et robustesse';
+  if(['gyuto','santoku','bunka'].includes(type)){
+    grind += a.coupe==='bascule' ? ', avec un profil courbe (du ventre) pour la bascule' : a.coupe==='vertical' ? ', avec un profil plutôt plat pour le hachage vertical' : '';
+  }
+
+  // 6. MANCHE
+  const yo = !single && ((a.habitude==='euro' && a.poids!=='leger') || a.poids==='lourd');
+  const wood = b===1?'magnolia (ho) avec virole en plastique':b===2?'magnolia ou noyer avec virole en corne de buffle':b===3?'noyer, cerisier ou châtaignier, avec virole en corne':'ébène ou bois stabilisé, avec virole en corne';
+  let handle, handleJp, handleEn;
+  if(yo){
+    handle = 'Manche Yo (occidental), riveté, en bois composite (pakka)';
+    handleJp='洋柄'; handleEn='Western (yo) handle';
+    why.push(`Pour le manche, j'ai pris un Yo (occidental) : ${a.habitude==='euro'?'tu viens des couteaux européens, la prise en main te sera familière':'tu aimes les couteaux lourds'}, et l'équilibre est plus en arrière, vers le manche.`);
+  } else {
+    const shape = single ? (g?'en D gaucher':'en D droitier') : (g||a.mainTaille==='grande') ? 'octogonal' : (a.poids==='leger'?'octogonal':'octogonal ou en D');
+    handle = `Manche Wa (japonais) ${shape}, en ${wood}`;
+    handleJp = shape.startsWith('octo') ? '和柄（八角）' : '和柄（D型）';
+    handleEn = `Japanese (wa) ${shape.startsWith('octo')?'octagonal':'D-shape'} handle`;
+    why.push(`Pour le manche, j'ai pris un Wa (japonais)${g?' octogonal, car il est symétrique et convient aux gauchers':''} : il est plus léger, l'équilibre est vers la lame, et le couteau est plus précis.`);
+  }
+
+  // 7. POIDS
+  const baseW = {gyuto:{180:130,210:160,240:190},santoku:{165:140,180:155},bunka:{165:140,180:155},nakiri:{165:150},
+    deba:{150:210,165:250},yanagiba:{240:150,270:175,300:205},sujihiki:{240:140,270:160}}[type][len];
+  const w = baseW + (yo?35:0);
+  const weight = `≈ ${w-15} – ${w+15} g`;
+
+  // 8. FINITION
+  const fin = single ? 'Kasumi (le cœur brillant contraste avec le revêtement mat), la finition traditionnelle' :
+    {sobre:'Migaki (poli) ou kasumi satiné', damas:'Damas (compte 20 à 40 % de plus pour le même acier)', tsuchime:'Tsuchime (martelé) : les aliments collent moins à la lame',
+     kurouchi:'Kurouchi (brut de forge, noir) : souvent le meilleur rapport qualité-prix', egal: b<=2?'Kurouchi ou tsuchime : souvent le meilleur rapport qualité-prix':'Peu importe : choisis le meilleur couteau dans ton budget'}[a.style];
+
+  // 9. PRIX
+  const P = {1:['45 – 85 €','8,000〜15,000'],2:['85 – 170 €','15,000〜30,000'],3:['170 – 340 €','30,000〜60,000'],4:['340 € et plus','60,000以上']}[b];
+  if(single && b===1) warn.push('Un yanagiba ou un deba de qualité correcte commence plutôt vers 100 €. À moins de 85 €, regarde les modèles en Ginsan ou en Shirogami d’entrée de gamme, et vérifie bien la finition.');
+  if(type==='yanagiba' && len>=270 && b<=2) warn.push('Un yanagiba de 270 mm ou plus dépasse vite 170 €. Un 240 mm reste un très bon choix si ton budget est serré.');
+
+  // 10. COMPLÉMENTS
+  const extra = [];
+  const pool = [];
+  if(['gyuto','santoku','bunka','nakiri'].includes(type)) pool.push(['petty','Petty 120–135 mm, dans le même acier : pour éplucher et parer']);
+  if(single || type==='sujihiki') pool.push([a.planche==='petite'?'santoku':'gyuto', a.planche==='petite'?'Santoku 165 mm, en inox VG10 : pour tout le reste':'Gyuto 210 mm, en inox VG10 : pour tout le reste']);
+  if(a.usage==='poissonEntier' && type!=='yanagiba') pool.push(['yanagiba','Yanagiba 240 mm : pour trancher les filets en sashimi']);
+  if(a.usage==='sashimi' && type!=='deba') pool.push(['deba','Deba 150 mm : pour lever les filets toi-même']);
+  if(a.usage==='viande' || (a.usage==='tout' && type==='gyuto')) pool.push(['sujihiki','Sujihiki 240 mm : pour trancher les rôtis et le poisson cru']);
+  if(type!=='nakiri' && (a.usage==='legumes'||a.usage==='tout')) pool.push(['nakiri','Nakiri 165 mm : pour les légumes']);
+  if(!pool.find(p=>p[0]==='petty') && type!=='petty') pool.push(['petty','Petty 135 mm : pour les petites tâches']);
+  const others = pool.filter(p=>p[0]!==type).slice(0, (+a.nb)-1).map(p=>p[1]);
+
+  const care = [];
+  care.push('Saya (fourreau en bois) ou protège-lame, indispensable pour la valise : environ 10 à 25 €');
+  if(a.affutage==='non') care.push('Pas de pierre : fais-le affûter en coutellerie une à deux fois par an');
+  else if(a.affutage==='apprendre') care.push('Pierre combinée 1000/6000, environ 17 à 35 € (demande au vendeur de te montrer l’angle)');
+  else care.push('Pierres 400 (réparation), 1000 et 3000/6000 (finition), environ 40 à 70 €');
+  if(!inox) care.push('Huile de camélia (tsubaki) et gomme anti-rouille (sabi-keshi) : environ 10 €');
+  care.push('Une planche en bois (hinoki ou bois de bout) prolonge le tranchant');
+
+  // 11. PHRASE VENDEUR
+  const T = TYPES[type];
+  const jp = `${T.jp} ${len}mm、${steel.jp}、${handleJp}${single||g?'':''}${g?'、左利きです':''}。予算は${P[1]}円くらいです。おすすめはありますか？`;
+  const en = `${T.en}, ${len} mm, ${steel.en}, ${handleEn}${g?', left-handed':''}. Budget around ${P[1].replace('〜',' – ').replace('以上',' +')} yen. What do you recommend?`;
+
+  return {T,len,steel,bevel,grind,handle,weight,fin,P,others,care,why,warn,jp,en,single};
+}
+
+function renderSpec(){
+  const k = computeKnife(wAns);
+  wiz.innerHTML = `
+    <div class="bar"><i style="width:100%"></i></div>
+    <div class="seal" style="margin-bottom:6px">TA FICHE COUTEAU</div>
+    <div class="spec-title">${k.T.fr} ${k.len} mm · ${k.steel.fr.split(',')[0]} · ${k.handle.startsWith('Manche Yo')?'manche Yo':'manche Wa'}</div>
+    <div class="spec-sub">${k.T.jp} — budget visé ${k.P[0]}</div>
+
+    <table class="spec">
+      <tr><td>Type</td><td>${k.T.fr} (${k.T.jp})</td></tr>
+      <tr><td>Longueur de lame</td><td>${k.len} mm</td></tr>
+      <tr><td>Acier</td><td>${k.steel.fr}</td></tr>
+      <tr><td>Construction</td><td>${k.steel.cons}</td></tr>
+      <tr><td>Dureté</td><td>${k.steel.hrc} HRC — ${k.steel.easy}</td></tr>
+      <tr><td>Rouille</td><td>${k.steel.rust}</td></tr>
+      <tr><td>Biseau</td><td>${k.bevel}</td></tr>
+      <tr><td>Profil / épaisseur</td><td>${k.grind}</td></tr>
+      <tr><td>Manche</td><td>${k.handle}</td></tr>
+      <tr><td>Poids estimé</td><td>${k.weight}</td></tr>
+      <tr><td>Finition</td><td>${k.fin}</td></tr>
+      <tr><td>Prix</td><td>${k.P[0]} (¥${k.P[1]})</td></tr>
+      ${k.others.length?`<tr><td>Couteau(x) complémentaire(s)</td><td>${k.others.join('<br>')}<br><small style="color:var(--ink-soft)">Compte environ 40 à 90 € par couteau secondaire.</small></td></tr>`:''}
+    </table>
+
+    ${k.warn.map(w=>`<div class="warnbox">⚠️ ${w}</div>`).join('')}
+
+    <h3>Pourquoi ce choix</h3>
+    <ul class="why">${k.why.map(x=>`<li>${x}</li>`).join('')}</ul>
+
+    <h3 style="margin-top:20px">À acheter avec</h3>
+    <ul class="why">${k.care.map(x=>`<li>${x}</li>`).join('')}</ul>
+
+    <div class="phrase">
+      <div style="font-size:.8rem;letter-spacing:.1em;color:#f3b2a9;margin-bottom:6px">À MONTRER AU VENDEUR</div>
+      <div class="jpbig" id="jpPhrase">${k.jp}</div>
+      <div class="en">${k.en}</div>
+    </div>
+
+    <div class="actions">
+      <button class="btn" id="copyJp">Copier la phrase</button>
+      <button class="btn ghost" id="printSpec">Imprimer / PDF</button>
+      <button class="btn ghost" id="restart">Recommencer</button>
+      <button class="btn ghost" id="backLast">← Modifier la dernière réponse</button>
+    </div>`;
+  document.getElementById('copyJp').onclick = e => {
+    const txt = k.jp + '\n' + k.en;
+    (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(
+      ()=>{ e.target.textContent='Copié ✓'; }, ()=>{ e.target.textContent='Copie impossible'; });
+  };
+  document.getElementById('printSpec').onclick = () => window.print();
+  document.getElementById('restart').onclick = () => { for(const k in wAns) delete wAns[k]; wStep=0; renderWiz(); wiz.scrollIntoView({behavior:'smooth'}); };
+  document.getElementById('backLast').onclick = () => { wStep = QS.length-1; renderWiz(); };
+  wiz.scrollIntoView({behavior:'smooth', block:'start'});
+}
+renderWiz();
 </script>
 </body>
 </html>
